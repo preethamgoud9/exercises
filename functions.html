@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rock-papers-scissors</title>
+  </head>
+  <body>
+    <p>rock papers scissors games</p>
+    <button
+      onclick="
+       
+    "
+    >
+      rock
+    </button>
+    <button
+      onclick="
+        
+    "
+    >
+      papers
+    </button>
+    <button
+      onclick=" 
+      playGame('scissor');
+      "
+    >
+      scissors
+    </button>
+    <script>
+      function playGame(playerMove) {
+        computerMove = pickComputerMove();
+        result = "";
+        if (playerMove === "scissor") {
+          if (computerMove === "rock") {
+            result = "you lose";
+          } else if (computerMove === "paper") {
+            result = "you win";
+          } else if (computerMove === "scissor") {
+            result = "tie";
+          }
+        } else if (playerMove === "paper") {
+          computerMove = pickComputerMove();
+          result = "";
+          if (computerMove === "rock") {
+            result = "you win";
+          } else if (computerMove === "paper") {
+            result = "tie";
+          } else if (computerMove === "scissor") {
+            result = "you lose";
+          } else if (playerMove === "rock") {
+            let computerMove = pickComputerMove();
+            let result = "";
+            if (computerMove === "rock") {
+              result = "tie";
+            } else if (computerMove === "paper") {
+              result = "you lose";
+            } else if (computerMove === "scissor") {
+              result = "you win";
+            }
+          }
+
+          alert(
+            `you picked ${playerMove}, computer picked ${computerMove}. ${result}`
+          );
+        }
+      }
+
+      alert(
+        `you picked ${playerMove} , computer picked ${computerMove}. ${result}`
+      );
+
+      function pickComputerMove() {
+        randomNumber = Math.random();
+        computerMove = "";
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+          computerMove = "rock";
+        } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+          computerMove = "paper";
+        } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+          computerMove = "scissor";
+        }
+        return computerMove;
+      }
+      /* i made lots of errors in this code which needs to corrected*/
+    </script>
+  </body>
+</html>

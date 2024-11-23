@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced functions</title>
+  </head>
+  <body>
+    <button class="js-button">click</button>
+    <script>
+      /* setTimeout(function () {
+          console.log("hello world"); //starts the function after 5seconds 1000 is 1seconds
+        }, 5000); //its takes two inputs into the function the 1st is function and the 2nd is time
+        console.log("harkirat"); //its doesnt wait for the functions to run it moves onto the next line
+      */
+      // ["make dishes", "wash cloths", "cook food"].forEach(function (value) {
+      //  console.log(value); // the function will take the string and add it to value(which is parameter) and repeat the same for all the values it is just like looping through an array
+      // });
+
+      /*const eventListener = () => {
+          console.log("arrow functions");
+        };
+        const buttonElement = document.querySelector(".js-button");
+        buttonElement.addEventListener("click", eventListener);
+        buttonElement.removeEventListener("click", eventListener); // this is to remove eventlistener
+          */
+      document
+        .querySelector(".js-button")
+        .addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            console.log("you Entered");
+          }
+        });
+      document.querySelector(".js-button").addEventListener("click", () => {
+        console.log("you clicked");
+      });
+    </script>
+  </body>
+</html>

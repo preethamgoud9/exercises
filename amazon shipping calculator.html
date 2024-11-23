@@ -1,0 +1,73 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Shipping Calculator</title>
+    <style>
+      .heading {
+        font-size: 20px;
+        margin-left: 10px;
+      }
+      .shipping-cost {
+        font-size: 16px;
+        margin-left: 10px;
+      }
+      .free-shipping {
+        font-size: 16px;
+        margin-left: 10px;
+      }
+      .js-input-cost {
+        padding: 10px;
+      }
+      .calculate-button {
+        padding: 10px 15px;
+        background-color: #00b300;
+        color: white;
+        font-size: 16px;
+        border: 0px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="heading">Amazon Shipping Calculator</p>
+    <p class="shipping-cost">Orders under $40 = +$10 on Shipping</p>
+    <p class="free-shipping">Orders above $40 = free Shipping</p>
+    <input
+      placeholder="cost of order"
+      class="js-input-cost"
+      onkeydown=" 
+        handleCostKeyDown (event);
+    "
+    />
+    <button
+      onclick=" 
+      calculateTotal();
+    "
+      class="calculate-button"
+    >
+      calculate
+    </button>
+    <p class="final-price"></p>
+    <script>
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-input-cost");
+        let cost = Number(inputElement.value);
+
+        if (cost < 40) {
+          cost = cost + 10;
+        } else {
+          cost = cost;
+        }
+        console.log(cost);
+        const finalPrice = document.querySelector(".final-price");
+        finalPrice.innerHTML = `The final cost of the product is $${cost}`;
+      }
+      function handleCostKeyDown(event) {
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+    </script>
+  </body>
+</html>
